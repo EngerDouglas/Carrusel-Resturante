@@ -99,3 +99,12 @@
 .itemCarrouselArrows > a > i{
     color: white;
 }
+
+.square{
+    border: 10px solid red;
+    background-color: red;
+    border-radius: 10px;
+    box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.75);
+}
