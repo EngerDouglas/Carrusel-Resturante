@@ -1,3 +1,16 @@
+.justify-content{
+    justify-content: center;
+    align-items: center;
+}
+
+.align-content{
+    align-content: center;
+}
+
+.d-flex{
+    display: flex;
+}
+
 .m10px {
     margin: 10px;
 }
@@ -16,95 +29,131 @@
 .flex-wrap {
     flex-wrap: wrap;
 }
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.ml10px{
+  margin-left: 10px;
+}
+.mr10px{
+  margin-right: 10px;
 }
 
-.carrousel{
-    margin-left: 70px;
-    margin-right: 70px;
+.mt{
+  margin-top: 200px;
 }
 
-.conteCarrousel{
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
+.center{
+  width: 300px;
+  margin: 1 auto; /* Centra horizontalmente */
+  text-align: center; /* Centra el contenido dentro de la carta */
+  padding: 45px;
 }
 
-.itemCarrousel{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
+
+html, body {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
 }
 
-.itemCarrousel.animate-left {
-    transform: translateX(-100%);
+body {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  background:#eee;
 }
 
-.itemCarrousel.animate-right {
-    transform: translateX(100%);
+.cards-wrapper {
+  width:100%;
+  height:300px;
+  max-width:1200px;
+  overflow-x:hidden;
+  position:relative;
 }
 
-.wh100{
-    width: 100%;
-    height: 100%;
+.cards {
+  position:absolute;
+  top:15px;
+  left:50%;
+  transform:translateX(-110px);
+  display:flex;
+  flex-direction:row;
+  width:1300px;
+  justify-content:space-between;
 }
 
-.itemCarrouselArrows{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px; 
+.card {
+  width:220px;
+  height:260px;
+  border-radius:15px;
+  border:none;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing:0.5px;
+  display:inline;
+  cursor:pointer;
+  box-sizing:border-box;
+  color:#000;
 }
 
-.itemCarrouselArrows > i:hover {
-    cursor: pointer;
+.card h2 {
+  font-size:2.6em;
+  font-weight:300;
+  margin-top:1.25em;
 }
 
-#itemCarrousel-1{
-    background-color: rgb(226, 50, 50);
+.card h4 {
+  text-transform:uppercase;
 }
 
-#itemCarrousel-2{
-    background-color: rgb(50, 200, 226);
+.icon svg {
+  overflow:visible;
+  stroke-width:1.25em;
+  width:3em;
 }
 
-#itemCarrousel-3{
-    background-color: rgb(200, 226, 50);
+.cards-wrapper::after {
+  content:'';
+  display:block;
+  position:absolute;
+  top:0;
+  width:100%;
+  max-width:1200px;
+  height:100%;
+  background:linear-gradient(90deg, #eee 0%, #ffffff00 30%, #ffffff00 70%, #eee 100%);
+  pointer-events:none;
 }
 
-.conteCarrouselController{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+.arrow-btn {
+  width:40px;
+  height:40px;
+  background:#fff;
+  border-radius:50%;
+  border:none;
+  box-shadow: 0 6px 8px #00000030;
+  position:absolute;
+  top:50%;
+  left:20px;
+  transform:translateY(-50%);
+  z-index:1000;
+  cursor:pointer;
 }
 
-.conteCarrouselController > a{
-    text-decoration: none;
-    font-size: 2em;
-    color: grey;
+.arrow-btn-next {
+  left:auto;
+  right:20px;
 }
 
-.itemCarrouselArrows > a > i{
-    color: white;
+.arrow-btn svg {
+  fill:#333;
+  position:absolute;
+  height:80%;  
+  left:50%;
+  top:50%;
+  transform:translate(-60%,-50%);
 }
 
-.square{
-    border: 10px solid red;
-    background-color: red;
-    border-radius: 10px;
-    box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -2px 10px 5px 0px rgba(0,0,0,0.75);
+.arrow-btn-next svg {
+  transform:translate(-40%,-50%);
 }
